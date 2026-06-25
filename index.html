@@ -215,6 +215,38 @@
   .hero-cta:hover { filter: brightness(1.07); transform: translateY(-1px); }
   .hero-cta:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 
+  .counter { margin-bottom: 20px; }
+  .counter[hidden] { display: none; }
+  .counter-head {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .counter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .stat-num {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(21px, 6.5vw, 30px);
+    line-height: 1;
+    letter-spacing: -.01em;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-num.red { color: var(--red-ink); }
+  .stat-num.green { color: var(--green); }
+  .stat-label { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+  .counter-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+
   /* phone row */
   .phones { display: grid; gap: 10px; margin-top: 4px; }
   .phone {
@@ -323,6 +355,15 @@
       <div class="section-head">
         <span class="section-num">01</span>
         <h2 data-i18n="s1-title">Buscar a un familiar</h2>
+      </div>
+      <div class="counter" id="counter" hidden>
+        <div class="counter-head">Personas en ambas plataformas de búsqueda</div>
+        <div class="counter-grid">
+          <div class="stat"><div class="stat-num" id="c-reportadas">—</div><div class="stat-label">Reportadas</div></div>
+          <div class="stat"><div class="stat-num red" id="c-porlocalizar">—</div><div class="stat-label">Por localizar</div></div>
+          <div class="stat"><div class="stat-num green" id="c-localizadas">—</div><div class="stat-label">Localizadas</div></div>
+        </div>
+        <div class="counter-note" id="counter-note"></div>
       </div>
       <div class="urgent"><strong>Toca una plataforma para buscar o reportar a una persona.</strong> Usa las que ya existen: centralizar todo en el mismo lugar es lo que permite cruzar "lo busco" con "está a salvo". Crear listas nuevas y dispersas dificulta el reencuentro.</div>
       <div class="cards">
@@ -523,6 +564,27 @@
       flash();
     }
   }
+
+  // Contador combinado en vivo. Si falla, queda oculto (nunca muestra 0).
+  (function loadCounter() {
+    fetch("/api/contador")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) {
+        if (!d || !d.combinado) return;
+        var c = d.combinado;
+        var fmt = function (n) { return Number(n).toLocaleString("es-ES"); };
+        document.getElementById("c-reportadas").textContent = fmt(c.reportadas);
+        document.getElementById("c-porlocalizar").textContent = fmt(c.porLocalizar);
+        document.getElementById("c-localizadas").textContent = fmt(c.localizadas);
+        var fuentes = d.fuentesOk === 2
+          ? "Desaparecidos Terremoto Venezuela + Venezuela Te Busca"
+          : "una de las plataformas (la otra no responde ahora)";
+        document.getElementById("counter-note").textContent =
+          "Total combinado de " + fuentes + ", actualizado en vivo. Puede incluir a una misma persona en ambas; no es cifra oficial.";
+        document.getElementById("counter").hidden = false;
+      })
+      .catch(function () { /* silencioso: el contador permanece oculto */ });
+  })();
 </script>
 </body>
 </html>
