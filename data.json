@@ -39,21 +39,29 @@
       "url": "https://familylinks.icrc.org/",
       "tipo": "canal oficial",
       "nota": "Servicio oficial de reconexión familiar. Activado por las Cruces Rojas de Colombia, Ecuador y México para la comunidad venezolana."
+    },
+    {
+      "nombre": "Cruz Roja — contacto familiar desde el exterior",
+      "url": "https://wa.me/573212139525",
+      "tipo": "canal oficial",
+      "nota": "Para quienes están fuera de Venezuela y perdieron contacto. WhatsApp +57 321 213 9525 o correo rcf@cruzrojacolombiana.org (Cruz Roja Colombiana)."
     }
   ],
   "telefonos": {
+    "emergencia_nacional_oficial": [
+      { "linea": "VEN 9-1-1 (línea única nacional)", "numero": "911" },
+      { "linea": "Emergencias / Protección Civil / Bomberos", "numero": "171" }
+    ],
+    "por_operadora_venezuela": [
+      { "operadora": "Movilnet", "numero": "*1" },
+      { "operadora": "Digitel", "numero": "112" }
+    ],
     "desde_eeuu": [
       {
         "entidad": "Departamento de Estado de EE.UU. (familiares en EE.UU.)",
         "numero": "+1-888-407-4747",
         "gratuito": true
       }
-    ],
-    "emergencias_venezuela": [
-      { "operadora": "CANTV (fijo)", "numero": "171" },
-      { "operadora": "Movilnet", "numero": "*1" },
-      { "operadora": "Digitel", "numero": "112" },
-      { "operadora": "Movistar", "numero": "911" }
     ],
     "ambulancias_caracas": [
       { "servicio": "Aeroambulancias", "numeros": ["(0212) 993.25.41", "(0212) 992.89.80", "(0212) 992.89.90", "(0212) 991.79.40"] },
