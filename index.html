@@ -181,6 +181,40 @@
   }
   .card-tag.blue { color: var(--blue-ink); background: var(--blue-soft); }
 
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 13px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    background: var(--red);
+    border-radius: 9px;
+    padding: 11px 16px;
+    transition: filter .12s ease;
+  }
+  .card-cta.blue { background: var(--blue); }
+  a.card:hover .card-cta { filter: brightness(1.07); }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    background: var(--red);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 11px;
+    padding: 14px 20px;
+    box-shadow: var(--shadow);
+    transition: filter .12s ease, transform .12s ease;
+  }
+  .hero-cta:hover { filter: brightness(1.07); transform: translateY(-1px); }
+  .hero-cta:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
   /* phone row */
   .phones { display: grid; gap: 10px; margin-top: 4px; }
   .phone {
@@ -279,7 +313,8 @@
     </div>
     <h1 class="reveal" data-i18n="h1">Cómo encontrar a tu familia y ayudar, desde donde estés</h1>
     <p class="lede reveal" data-i18n="lede">Dos terremotos (7,2 y 7,5) golpearon el norte de Venezuela el 24 de junio de 2026, con epicentro en Yaracuy. La Guaira y el Gran Caracas son las zonas más afectadas. Aquí están los canales verificados para buscar a un familiar y para ayudar sin caer en estafas.</p>
-    <span class="updated" data-i18n="updated"><span class="dot" aria-hidden="true"></span>Información verificada el 25 de junio de 2026</span>
+    <span class="updated"><span class="dot" aria-hidden="true"></span>Información verificada el 25 de junio de 2026</span>
+    <div><a class="hero-cta" href="#buscar">Buscar o reportar a un familiar →</a></div>
   </header>
 
   <main>
@@ -289,30 +324,32 @@
         <span class="section-num">01</span>
         <h2 data-i18n="s1-title">Buscar a un familiar</h2>
       </div>
-      <div class="urgent" data-i18n="s1-urgent"><strong>Usa las plataformas que ya existen.</strong> Lo crítico es centralizar: que todos busquen y reporten en el mismo lugar es lo que permite cruzar "lo busco" con "está a salvo". Crear listas nuevas y dispersas hace más difícil el reencuentro.</div>
+      <div class="urgent"><strong>Toca una plataforma para buscar o reportar a una persona.</strong> Usa las que ya existen: centralizar todo en el mismo lugar es lo que permite cruzar "lo busco" con "está a salvo". Crear listas nuevas y dispersas dificulta el reencuentro.</div>
       <div class="cards">
         <a class="card" href="https://desaparecidosterremotovenezuela.com/" target="_blank" rel="noopener">
           <div class="card-top">
             <span class="card-title">Desaparecidos Terremoto Venezuela</span>
             <span class="card-host">desaparecidosterremotovenezuela.com</span>
           </div>
-          <div class="card-desc" data-i18n="s1-c1-desc">Plataforma ciudadana central. Reporta a un desaparecido o verifica si alguien ya fue localizado.</div>
-          <span class="card-tag" data-i18n="s1-c1-tag">Reporta o verifica aquí</span>
+          <div class="card-desc">Plataforma ciudadana central. Busca a una persona o repórtala como desaparecida o a salvo.</div>
+          <span class="card-cta">Buscar o reportar →</span>
         </a>
         <a class="card" href="https://venezuelatebusca.com/" target="_blank" rel="noopener">
           <div class="card-top">
             <span class="card-title">Venezuela Te Busca</span>
             <span class="card-host">venezuelatebusca.com</span>
           </div>
-          <div class="card-desc" data-i18n="s1-c2-desc">Registro centralizado de personas desaparecidas tras el terremoto.</div>
+          <div class="card-desc">Registro centralizado de personas desaparecidas tras el terremoto.</div>
+          <span class="card-cta">Buscar o reportar →</span>
         </a>
         <a class="card" href="https://familylinks.icrc.org/" target="_blank" rel="noopener">
           <div class="card-top">
             <span class="card-title">Restoring Family Links — Cruz Roja / CICR</span>
             <span class="card-host">familylinks.icrc.org</span>
           </div>
-          <div class="card-desc" data-i18n="s1-c3-desc">Servicio oficial de reconexión familiar. Las Cruces Rojas de Colombia, Ecuador y México ya lo activaron para la comunidad venezolana.</div>
-          <span class="card-tag blue" data-i18n="s1-c3-tag">Canal oficial</span>
+          <div class="card-desc">Servicio oficial de reconexión familiar. Las Cruces Rojas de Colombia, Ecuador y México ya lo activaron para la comunidad venezolana.</div>
+          <span class="card-tag blue">Canal oficial</span>
+          <div><span class="card-cta blue">Abrir servicio →</span></div>
         </a>
       </div>
 
