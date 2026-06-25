@@ -91,6 +91,25 @@
       "enfoque": "Equipos de rescate y evaluación con suministros preposicionados vía su fondo de emergencia."
     }
   ],
+  "donar_en_venezuela": {
+    "nota": "Solo organizaciones certificadas y no partidistas. Antes de entregar donaciones en cualquier centro de acopio, confirma que sea una organización reconocida.",
+    "organizaciones": [
+      {
+        "nombre": "Cáritas de Venezuela",
+        "url": "https://www.caritasvenezuela.org/",
+        "tipo": "Iglesia / Conferencia Episcopal · no partidista",
+        "acopio": "Centro nacional en Caracas (Sede CEV, Montalbán, Av. Teherán, a 200 m de la UCAB) y diócesis de todo el país. Barquisimeto: Carrera 18 entre calles 34 y 35, tel. 0251-446 84 02.",
+        "recibe": ["dinero", "agua", "alimentos no perecederos", "medicinas"]
+      },
+      {
+        "nombre": "Cruz Roja Venezolana",
+        "url": "https://cruzroja.ve/",
+        "tipo": "humanitaria certificada",
+        "instagram": "@cruzrojave",
+        "recibe": ["dinero"]
+      }
+    ]
+  },
   "seguridad_donaciones": [
     "Dona solo en el sitio web oficial de la organización, escribiendo tú mismo la dirección.",
     "La donación de dinero a una organización establecida rinde más que enviar ropa o comida.",
