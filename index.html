@@ -247,6 +247,73 @@
   .stat-label { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
   .counter-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
 
+  /* action dialog */
+  dialog.dlg {
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    max-width: 440px;
+    width: calc(100% - 32px);
+    box-shadow: 0 20px 60px rgba(22, 25, 31, .28);
+  }
+  dialog.dlg::backdrop { background: rgba(22, 25, 31, .55); }
+  .dlg-inner { padding: 22px 20px 24px; position: relative; }
+  .dlg-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    background: var(--paper);
+    border-radius: 9px;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .dlg-close:hover { background: #ebedf0; }
+  .dlg-title {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 4px 0 16px;
+    letter-spacing: -.01em;
+    padding-right: 36px;
+  }
+  .dlg-opt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 15px 16px;
+    margin-bottom: 11px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+    transition: border-color .12s ease, transform .12s ease;
+  }
+  .dlg-opt:hover { transform: translateY(-1px); border-color: #cfd4dc; }
+  .dlg-opt:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+  .dlg-opt.red { border-color: #f0ccca; background: var(--red-soft); }
+  .dlg-opt.blue-cta { border-color: #cfe0f3; background: var(--blue-soft); }
+  .dlg-opt-title { display: block; font-weight: 600; font-size: 17px; }
+  .dlg-opt-sub { display: block; font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .dlg-back {
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  .dlg-back:hover { color: var(--ink); }
+
   /* phone row */
   .phones { display: grid; gap: 10px; margin-top: 4px; }
   .phone {
@@ -525,6 +592,35 @@
     </section>
   </main>
 
+  <dialog class="dlg" id="action-dialog" aria-labelledby="dlg-title">
+    <div class="dlg-inner">
+      <button class="dlg-close" id="dlg-close" aria-label="Cerrar">×</button>
+      <div data-step="1">
+        <h3 class="dlg-title" id="dlg-title">¿Qué necesitas hacer?</h3>
+        <button class="dlg-opt blue-cta" data-action="buscar">
+          <span class="dlg-opt-title">🔍 Buscar a una persona</span>
+          <span class="dlg-opt-sub">Ver si ya está reportada o si la localizaron</span>
+        </button>
+        <button class="dlg-opt red" data-action="reportar">
+          <span class="dlg-opt-title">➕ Reportar a una persona</span>
+          <span class="dlg-opt-sub">Repórtala como desaparecida, o avisa que está a salvo</span>
+        </button>
+      </div>
+      <div data-step="2" hidden>
+        <button class="dlg-back" id="dlg-back">← Volver</button>
+        <h3 class="dlg-title" id="dlg-step2-title">Elige una plataforma</h3>
+        <a class="dlg-opt" href="https://desaparecidosterremotovenezuela.com/" target="_blank" rel="noopener">
+          <span class="dlg-opt-title">Desaparecidos Terremoto Venezuela</span>
+          <span class="dlg-opt-sub">La plataforma con más reportes</span>
+        </a>
+        <a class="dlg-opt" href="https://venezuelatebusca.com/" target="_blank" rel="noopener">
+          <span class="dlg-opt-title">Venezuela Te Busca</span>
+          <span class="dlg-opt-sub">Registro centralizado de desaparecidos</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
   <footer>
     <p class="disclaimer">Esta página reúne enlaces a plataformas y organizaciones de terceros y no recauda dinero ni datos. Verifica siempre en el sitio oficial antes de donar o compartir información personal. Los números y cifras se verificaron el 25 de junio de 2026 y pueden cambiar.</p>
     <p class="disclaimer">¿Desarrollas una app o un agente de IA? Datos estructurados listos para consumir en <a href="data.json">/data.json</a>.</p>
@@ -564,6 +660,36 @@
       flash();
     }
   }
+
+  // Diálogo de acción del botón principal: ¿Buscar o Reportar? → ¿Cuál plataforma?
+  (function setupDialog() {
+    var dlg = document.getElementById("action-dialog");
+    if (!dlg || typeof dlg.showModal !== "function") return; // respaldo: el enlace lleva a #buscar
+    var hero = document.querySelector(".hero-cta");
+    var step1 = dlg.querySelector('[data-step="1"]');
+    var step2 = dlg.querySelector('[data-step="2"]');
+    var step2title = document.getElementById("dlg-step2-title");
+
+    function reset() { step2.hidden = true; step1.hidden = false; }
+
+    if (hero) hero.addEventListener("click", function (e) { e.preventDefault(); reset(); dlg.showModal(); });
+
+    dlg.querySelectorAll("[data-action]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var a = b.getAttribute("data-action");
+        step2title.textContent = a === "reportar"
+          ? "¿En qué plataforma quieres reportar?"
+          : "¿En qué plataforma quieres buscar?";
+        step1.hidden = true;
+        step2.hidden = false;
+      });
+    });
+
+    document.getElementById("dlg-back").addEventListener("click", reset);
+    document.getElementById("dlg-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", reset);
+  })();
 
   // Contador combinado en vivo. Si falla, queda oculto (nunca muestra 0).
   (function loadCounter() {
