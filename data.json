@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "titulo": "Terremoto Venezuela 2026 — Hub de recursos verificados",
+    "descripcion": "Datos estructurados para localizar familiares y ayudar de forma segura tras los terremotos del 24 de junio de 2026 en Venezuela. Pensado para consumo por agentes y aplicaciones: dirige a las fuentes oficiales, no replica sus datos.",
+    "idioma": "es",
+    "verificado_el": "2026-06-25",
+    "aviso": "Este recurso reúne enlaces y números de terceros; no recauda dinero ni gestiona datos personales. Verifica siempre en la fuente oficial antes de donar o difundir información. Las cifras cambian con frecuencia.",
+    "version": 1
+  },
+  "evento": {
+    "nombre": "Terremotos del norte de Venezuela",
+    "fecha": "2026-06-24",
+    "magnitudes": [7.2, 7.5],
+    "epicentro": "Estado Yaracuy (cerca de San Felipe y Yumare), ~160 km al oeste de Caracas",
+    "zonas_mas_afectadas": ["La Guaira", "Gran Caracas", "Yaracuy"],
+    "balance_oficial": {
+      "al_dia": "2026-06-25",
+      "fallecidos": 188,
+      "heridos": 1520,
+      "desaparecidos_oficiales": 157,
+      "nota": "Cifras oficiales en aumento; el USGS estima que el total podría llegar a miles."
+    }
+  },
+  "buscar_familia": [
+    {
+      "nombre": "Desaparecidos Terremoto Venezuela",
+      "url": "https://desaparecidosterremotovenezuela.com/",
+      "tipo": "plataforma ciudadana",
+      "nota": "Reportar a un desaparecido o verificar si alguien fue localizado. No gestiona dinero ni donaciones."
+    },
+    {
+      "nombre": "Venezuela Te Busca",
+      "url": "https://venezuelatebusca.com/",
+      "tipo": "plataforma ciudadana",
+      "nota": "Registro centralizado de personas desaparecidas tras el terremoto."
+    },
+    {
+      "nombre": "Restoring Family Links (Cruz Roja / CICR)",
+      "url": "https://familylinks.icrc.org/",
+      "tipo": "canal oficial",
+      "nota": "Servicio oficial de reconexión familiar. Activado por las Cruces Rojas de Colombia, Ecuador y México para la comunidad venezolana."
+    }
+  ],
+  "telefonos": {
+    "desde_eeuu": [
+      {
+        "entidad": "Departamento de Estado de EE.UU. (familiares en EE.UU.)",
+        "numero": "+1-888-407-4747",
+        "gratuito": true
+      }
+    ],
+    "emergencias_venezuela": [
+      { "operadora": "CANTV (fijo)", "numero": "171" },
+      { "operadora": "Movilnet", "numero": "*1" },
+      { "operadora": "Digitel", "numero": "112" },
+      { "operadora": "Movistar", "numero": "911" }
+    ],
+    "ambulancias_caracas": [
+      { "servicio": "Aeroambulancias", "numeros": ["(0212) 993.25.41", "(0212) 992.89.80", "(0212) 992.89.90", "(0212) 991.79.40"] },
+      { "servicio": "Rescarven", "numeros": ["(0212) 993.69.11", "(0212) 993.69.91", "(0212) 993.13.10", "(0212) 993.33.67"] },
+      { "servicio": "Ambulancia Metropolitano", "numeros": ["(0212) 545.45.45", "(0212) 545.46.55", "(0212) 577.92.09"] }
+    ]
+  },
+  "donar": [
+    {
+      "nombre": "World Central Kitchen",
+      "url": "https://wck.org/donate",
+      "enfoque": "Comida caliente y agua en zona. Del chef José Andrés; comprometió 1 millón de dólares para Venezuela."
+    },
+    {
+      "nombre": "Direct Relief",
+      "url": "https://www.directrelief.org/donate",
+      "enfoque": "Medicinas e insumos quirúrgicos. Reconocida por su transparencia."
+    },
+    {
+      "nombre": "International Medical Corps",
+      "url": "https://internationalmedicalcorps.org/emergency-response/venezuela-earthquakes/",
+      "enfoque": "Equipo médico desplegado en el país atendiendo emergencias."
+    },
+    {
+      "nombre": "Cruz Roja / IFRC",
+      "url": "https://www.ifrc.org/",
+      "enfoque": "Equipos de rescate y evaluación con suministros preposicionados vía su fondo de emergencia."
+    }
+  ],
+  "seguridad_donaciones": [
+    "Dona solo en el sitio web oficial de la organización, escribiendo tú mismo la dirección.",
+    "La donación de dinero a una organización establecida rinde más que enviar ropa o comida.",
+    "Desconfía de enlaces acortados que llegan por WhatsApp, DM o SMS pidiendo donaciones urgentes.",
+    "Desconfía de recaudaciones personales sin verificar y de pagos por cripto o transferencia directa a un desconocido.",
+    "Nadie legítimo te presiona a donar en los próximos minutos; la presión es señal de fraude."
+  ],
+  "fuentes": [
+    "https://www.cnn.com/2026/06/24/weather/live-news/venezuela-earthquake-puerto-rico-tsunami",
+    "https://www.nbcnews.com/world/venezuela/powerful-earthquake-venezuela-rcna351673",
+    "https://www.ifrc.org/press-release/venezuela-red-cross-responds-needs-emerge-aftermath-powerful-back-back-earthquakes",
+    "https://www.state.gov/responding-to-venezuela-earthquakes/",
+    "https://desaparecidosterremotovenezuela.com/"
+  ]
+}

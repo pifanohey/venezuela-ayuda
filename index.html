@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terremoto Venezuela 2026 — Encontrar familia y ayudar</title>
+<meta name="description" content="Recursos verificados para localizar familiares y donar de forma segura tras los terremotos del 24 de junio de 2026 en Venezuela. Enlaces oficiales a plataformas de desaparecidos y organizaciones de ayuda." />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Terremoto Venezuela 2026 — Encontrar familia y ayudar" />
+<meta property="og:description" content="Plataformas verificadas para buscar familiares y donar de forma segura tras los terremotos del 24 de junio de 2026." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #16191f;
+    --muted: #5b6471;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --border: #e3e6eb;
+    --blue: #1b4d8f;
+    --blue-ink: #133a6b;
+    --blue-soft: #edf2f8;
+    --red: #be2f26;
+    --red-ink: #8f231d;
+    --red-soft: #fbeceb;
+    --yellow: #e7b23f;
+    --green: #2e7d5b;
+    --radius: 14px;
+    --maxw: 680px;
+    --shadow: 0 1px 2px rgba(22,25,31,.04), 0 6px 20px rgba(22,25,31,.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* tricolor signature */
+  .tricolor {
+    height: 4px;
+    background: linear-gradient(to right,
+      var(--yellow) 0 33.33%,
+      var(--blue) 33.33% 66.66%,
+      var(--red) 66.66% 100%);
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  /* header */
+  header { padding: 34px 0 8px; }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .eyebrow {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(28px, 7vw, 40px);
+    line-height: 1.12;
+    letter-spacing: -.01em;
+    margin: 0 0 14px;
+  }
+
+  .lede {
+    font-size: 17px;
+    color: var(--muted);
+    margin: 0 0 18px;
+    max-width: 36em;
+  }
+
+  .updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 999px;
+    padding: 6px 13px;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+
+  /* sections */
+  main { padding: 28px 0 12px; }
+  section { margin: 30px 0; scroll-margin-top: 16px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 15px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+  h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(22px, 5vw, 27px);
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -.01em;
+  }
+  .section-sub { color: var(--muted); font-size: 15.5px; margin: -6px 0 18px 0; }
+
+  /* urgent banner for find-family */
+  .urgent {
+    border-left: 4px solid var(--red);
+    background: var(--red-soft);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--red-ink);
+  }
+  .urgent strong { color: var(--red-ink); }
+
+  /* link cards */
+  .cards { display: grid; gap: 12px; }
+
+  a.card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  a.card:hover {
+    transform: translateY(-2px);
+    border-color: #cfd4dc;
+    box-shadow: 0 2px 4px rgba(22,25,31,.05), 0 12px 28px rgba(22,25,31,.09);
+  }
+  a.card:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .card-title { font-weight: 600; font-size: 17px; }
+  .card-host { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+  .card-desc { color: var(--muted); font-size: 14.5px; margin-top: 5px; }
+  .card-tag {
+    display: inline-block;
+    margin-top: 9px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--red-ink);
+    background: var(--red-soft);
+    border-radius: 6px;
+    padding: 3px 8px;
+  }
+  .card-tag.blue { color: var(--blue-ink); background: var(--blue-soft); }
+
+  /* phone row */
+  .phones { display: grid; gap: 10px; margin-top: 4px; }
+  .phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .phone .label { font-size: 14.5px; color: var(--muted); }
+  .phone a {
+    font-weight: 600;
+    color: var(--blue-ink);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .phone a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+
+  /* checklist */
+  .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+  .checklist li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 15.5px;
+  }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 3px;
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    background: var(--green);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center/14px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center/14px no-repeat;
+  }
+  .checklist li.no::before {
+    background: var(--red);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E") center/14px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E") center/14px no-repeat;
+  }
+
+  /* share */
+  .share-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--ink);
+    font: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  .btn:hover { transform: translateY(-1px); border-color: #cfd4dc; }
+  .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+  .btn.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .btn.wa { background: #1faf54; color: #fff; border-color: #1faf54; }
+
+  /* footer */
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 26px 0 60px; }
+  .disclaimer { font-size: 13.5px; color: var(--muted); margin: 0 0 16px; }
+  .sources { font-size: 13px; color: var(--muted); }
+  .sources a { color: var(--blue-ink); }
+  .sources summary { cursor: pointer; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .sources ul { margin: 6px 0 0; padding-left: 18px; }
+  .sources li { margin: 3px 0; }
+
+  a { color: var(--blue-ink); }
+
+  /* entrance */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(8px); animation: rise .5s ease forwards; }
+    .reveal:nth-child(2) { animation-delay: .06s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+<div class="tricolor"></div>
+
+<div class="wrap">
+  <header>
+    <div class="topbar">
+      <span class="eyebrow">Terremotos · Venezuela · 24 jun 2026</span>
+    </div>
+    <h1 class="reveal" data-i18n="h1">Cómo encontrar a tu familia y ayudar, desde donde estés</h1>
+    <p class="lede reveal" data-i18n="lede">Dos terremotos (7,2 y 7,5) golpearon el norte de Venezuela el 24 de junio de 2026, con epicentro en Yaracuy. La Guaira y el Gran Caracas son las zonas más afectadas. Aquí están los canales verificados para buscar a un familiar y para ayudar sin caer en estafas.</p>
+    <span class="updated" data-i18n="updated"><span class="dot" aria-hidden="true"></span>Información verificada el 25 de junio de 2026</span>
+  </header>
+
+  <main>
+    <!-- 1. FIND FAMILY -->
+    <section id="buscar">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 data-i18n="s1-title">Buscar a un familiar</h2>
+      </div>
+      <div class="urgent" data-i18n="s1-urgent"><strong>Usa las plataformas que ya existen.</strong> Lo crítico es centralizar: que todos busquen y reporten en el mismo lugar es lo que permite cruzar "lo busco" con "está a salvo". Crear listas nuevas y dispersas hace más difícil el reencuentro.</div>
+      <div class="cards">
+        <a class="card" href="https://desaparecidosterremotovenezuela.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Desaparecidos Terremoto Venezuela</span>
+            <span class="card-host">desaparecidosterremotovenezuela.com</span>
+          </div>
+          <div class="card-desc" data-i18n="s1-c1-desc">Plataforma ciudadana central. Reporta a un desaparecido o verifica si alguien ya fue localizado.</div>
+          <span class="card-tag" data-i18n="s1-c1-tag">Reporta o verifica aquí</span>
+        </a>
+        <a class="card" href="https://venezuelatebusca.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Venezuela Te Busca</span>
+            <span class="card-host">venezuelatebusca.com</span>
+          </div>
+          <div class="card-desc" data-i18n="s1-c2-desc">Registro centralizado de personas desaparecidas tras el terremoto.</div>
+        </a>
+        <a class="card" href="https://familylinks.icrc.org/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Restoring Family Links — Cruz Roja / CICR</span>
+            <span class="card-host">familylinks.icrc.org</span>
+          </div>
+          <div class="card-desc" data-i18n="s1-c3-desc">Servicio oficial de reconexión familiar. Las Cruces Rojas de Colombia, Ecuador y México ya lo activaron para la comunidad venezolana.</div>
+          <span class="card-tag blue" data-i18n="s1-c3-tag">Canal oficial</span>
+        </a>
+      </div>
+
+      <div class="phones" style="margin-top:14px">
+        <div class="phone">
+          <span class="label" data-i18n="s1-p1-label">Desde EE.UU. — Departamento de Estado (gratis)</span>
+          <a href="tel:+18884074747">+1-888-407-4747</a>
+        </div>
+        <div class="phone">
+          <span class="label" data-i18n="s1-p2-label">Emergencias en Venezuela</span>
+          <span><a href="tel:171">171</a> · *1 · <a href="tel:112">112</a> · <a href="tel:911">911</a></span>
+        </div>
+      </div>
+      <details class="sources" style="margin-top:12px">
+        <summary data-i18n="s1-amb-title">Ambulancias y rescate (Caracas)</summary>
+        <ul>
+          <li>Aeroambulancias: (0212) 993.25.41 · 992.89.80 · 992.89.90 · 991.79.40</li>
+          <li>Rescarven: (0212) 993.69.11 · 993.69.91 · 993.13.10 · 993.33.67</li>
+          <li>Ambulancia Metropolitano: (0212) 545.45.45 · 545.46.55 · 577.92.09</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- 2. DONATE -->
+    <section id="donar">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 data-i18n="s2-title">Cómo donar desde EE.UU.</h2>
+      </div>
+      <p class="section-sub" data-i18n="s2-sub">El dinero ayuda más que los bienes físicos: estas organizaciones compran lo necesario en la zona, sin retrasos de aduana. Todas tienen operación real sobre el terreno.</p>
+      <div class="cards">
+        <a class="card" href="https://wck.org/donate" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">World Central Kitchen</span>
+            <span class="card-host">wck.org/donate</span>
+          </div>
+          <div class="card-desc" data-i18n="s2-c1-desc">Comida caliente y agua en zonas de desastre. Del chef José Andrés; ya comprometió 1 millón de dólares para Venezuela.</div>
+        </a>
+        <a class="card" href="https://www.directrelief.org/donate" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Direct Relief</span>
+            <span class="card-host">directrelief.org/donate</span>
+          </div>
+          <div class="card-desc" data-i18n="s2-c2-desc">Medicinas e insumos quirúrgicos para hospitales y primeros auxilios. Reconocida por su transparencia.</div>
+        </a>
+        <a class="card" href="https://internationalmedicalcorps.org/emergency-response/venezuela-earthquakes/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">International Medical Corps</span>
+            <span class="card-host">internationalmedicalcorps.org</span>
+          </div>
+          <div class="card-desc" data-i18n="s2-c3-desc">Equipo médico ya desplegado en el país atendiendo emergencias.</div>
+        </a>
+        <a class="card" href="https://www.ifrc.org/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Cruz Roja / IFRC</span>
+            <span class="card-host">ifrc.org</span>
+          </div>
+          <div class="card-desc" data-i18n="s2-c4-desc">Equipos de rescate y evaluación con suministros preposicionados a través de su fondo de emergencia.</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. AVOID SCAMS -->
+    <section id="estafas">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 data-i18n="s3-title">Donar sin caer en estafas</h2>
+      </div>
+      <p class="section-sub" data-i18n="s3-sub">Tras cada desastre aparecen recaudaciones falsas. Antes de dar tu dinero:</p>
+      <ul class="checklist">
+        <li data-i18n="s3-1">Dona solo en el sitio web oficial de la organización, escribiendo tú mismo la dirección.</li>
+        <li data-i18n="s3-2">La donación de dinero a una organización establecida rinde más que enviar ropa o comida.</li>
+        <li class="no" data-i18n="s3-3">Desconfía de enlaces acortados que llegan por WhatsApp, DM o SMS pidiendo donaciones urgentes.</li>
+        <li class="no" data-i18n="s3-4">Desconfía de recaudaciones personales sin verificar y de pagos por cripto o transferencia directa a un desconocido.</li>
+        <li class="no" data-i18n="s3-5">Nadie legítimo te presiona a donar "en los próximos minutos". La presión es señal de fraude.</li>
+      </ul>
+    </section>
+
+    <!-- 4. SHARE -->
+    <section id="compartir">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 data-i18n="s4-title">Comparte esta página</h2>
+      </div>
+      <p class="section-sub" data-i18n="s4-sub">Lo más útil que puedes hacer es enviar a la gente a los canales correctos. Compártelo en tus grupos.</p>
+      <div class="share-row">
+        <a class="btn wa" id="share-wa" href="#" target="_blank" rel="noopener" data-i18n="share-wa">Compartir por WhatsApp</a>
+        <a class="btn" id="share-x" href="#" target="_blank" rel="noopener" data-i18n="share-x">Compartir en X</a>
+        <button class="btn" id="share-copy" onclick="copyLink()" data-i18n="share-copy">Copiar enlace</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="disclaimer">Esta página reúne enlaces a plataformas y organizaciones de terceros y no recauda dinero ni datos. Verifica siempre en el sitio oficial antes de donar o compartir información personal. Los números y cifras se verificaron el 25 de junio de 2026 y pueden cambiar.</p>
+    <p class="disclaimer">¿Desarrollas una app o un agente de IA? Datos estructurados listos para consumir en <a href="data.json">/data.json</a>.</p>
+    <details class="sources">
+      <summary data-i18n="sources-title">Fuentes</summary>
+      <ul>
+        <li><a href="https://www.cnn.com/2026/06/24/weather/live-news/venezuela-earthquake-puerto-rico-tsunami" target="_blank" rel="noopener">CNN — Live updates: Venezuela earthquakes</a></li>
+        <li><a href="https://www.nbcnews.com/world/venezuela/powerful-earthquake-venezuela-rcna351673" target="_blank" rel="noopener">NBC News — Twin earthquakes hammer Venezuela</a></li>
+        <li><a href="https://www.ifrc.org/press-release/venezuela-red-cross-responds-needs-emerge-aftermath-powerful-back-back-earthquakes" target="_blank" rel="noopener">IFRC — Red Cross responds to Venezuela earthquakes</a></li>
+        <li><a href="https://www.state.gov/responding-to-venezuela-earthquakes/" target="_blank" rel="noopener">U.S. Department of State — Responding to Venezuela earthquakes</a></li>
+      </ul>
+    </details>
+  </footer>
+</div>
+
+<script>
+  var SHARE_TEXT = "Terremoto en Venezuela: cómo encontrar a tu familia y ayudar de forma segura. Canales verificados:";
+
+  function shareUrl() { return window.location.href.split("#")[0]; }
+
+  (function initShare() {
+    var url = shareUrl();
+    document.getElementById("share-wa").href =
+      "https://wa.me/?text=" + encodeURIComponent(SHARE_TEXT + " " + url);
+    document.getElementById("share-x").href =
+      "https://twitter.com/intent/tweet?text=" + encodeURIComponent(SHARE_TEXT) + "&url=" + encodeURIComponent(url);
+  })();
+
+  function copyLink() {
+    var url = shareUrl();
+    var btn = document.getElementById("share-copy");
+    var original = btn.textContent;
+    function flash() { btn.textContent = "Enlace copiado"; setTimeout(function () { btn.textContent = original; }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(flash).catch(flash);
+    } else {
+      flash();
+    }
+  }
+</script>
+</body>
+</html>
