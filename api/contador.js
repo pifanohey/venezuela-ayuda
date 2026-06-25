@@ -50,8 +50,23 @@ async function getDesaparecidos() {
 }
 
 async function getVenezuelaTeBusca() {
+  // Cabeceras de navegador completas para pasar la protección anti-bot
+  // de Cloudflare cuando la petición sale de una IP de datacenter (Vercel).
   const r = await fetchWithTimeout(VENEZUELATEBUSCA_URL, {
-    headers: { "User-Agent": UA },
+    headers: {
+      "User-Agent": UA,
+      Accept:
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+      "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
+      "Upgrade-Insecure-Requests": "1",
+      "sec-ch-ua": '"Chromium";v="126", "Not.A/Brand";v="24"',
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": '"macOS"',
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+    },
   });
   if (!r.ok) throw new Error("http " + r.status);
   const html = await r.text();
