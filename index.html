@@ -255,6 +255,15 @@
   .stat-num.green { color: var(--green); }
   .stat-label { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
   .counter-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+  .stat-pct { font-size: 12px; font-weight: 600; margin-top: 5px; }
+  .stat-pct.red { color: var(--red-ink); }
+  .stat-pct.green { color: var(--green); }
+  .counter-bar { height: 10px; border-radius: 999px; background: #eceef1; overflow: hidden; margin-top: 14px; }
+  .counter-bar[hidden] { display: none; }
+  .counter-bar-fill { display: block; height: 100%; width: 0; background: var(--green); border-radius: 999px; transition: width .6s ease; }
+  .counter-bar-legend { display: flex; justify-content: space-between; font-size: 11.5px; margin-top: 6px; }
+  .counter-bar-legend .loc { color: var(--green); font-weight: 600; }
+  .counter-bar-legend .pend { color: var(--red-ink); font-weight: 600; }
 
   /* action dialog */
   dialog.dlg {
@@ -436,9 +445,11 @@
         <div class="counter-head">Personas en ambas plataformas de búsqueda</div>
         <div class="counter-grid">
           <div class="stat"><div class="stat-num" id="c-reportadas">—</div><div class="stat-label">Reportadas</div></div>
-          <div class="stat"><div class="stat-num red" id="c-porlocalizar">—</div><div class="stat-label">Por localizar</div></div>
-          <div class="stat"><div class="stat-num green" id="c-localizadas">—</div><div class="stat-label">Localizadas</div></div>
+          <div class="stat"><div class="stat-num red" id="c-porlocalizar">—</div><div class="stat-label">Por localizar</div><div class="stat-pct red" id="c-pct-pend"></div></div>
+          <div class="stat"><div class="stat-num green" id="c-localizadas">—</div><div class="stat-label">Localizadas</div><div class="stat-pct green" id="c-pct-loc"></div></div>
         </div>
+        <div class="counter-bar" id="counter-bar" hidden><span class="counter-bar-fill" id="counter-bar-fill"></span></div>
+        <div class="counter-bar-legend" id="counter-bar-legend" hidden><span class="loc" id="leg-loc"></span><span class="pend" id="leg-pend"></span></div>
         <div class="counter-note" id="counter-note"></div>
       </div>
       <div class="urgent"><strong>Toca una plataforma para buscar o reportar a una persona.</strong> Usa las que ya existen: centralizar todo en el mismo lugar es lo que permite cruzar "lo busco" con "está a salvo". Crear listas nuevas y dispersas dificulta el reencuentro.</div>
@@ -712,6 +723,16 @@
         document.getElementById("c-reportadas").textContent = fmt(c.reportadas);
         document.getElementById("c-porlocalizar").textContent = fmt(c.porLocalizar);
         document.getElementById("c-localizadas").textContent = fmt(c.localizadas);
+        var pctLoc = c.reportadas ? Math.round((c.localizadas / c.reportadas) * 100) : 0;
+        var pctPend = c.reportadas ? Math.round((c.porLocalizar / c.reportadas) * 100) : 0;
+        document.getElementById("c-pct-pend").textContent = pctPend + "% del total";
+        document.getElementById("c-pct-loc").textContent = pctLoc + "% del total";
+        document.getElementById("counter-bar-fill").style.width = pctLoc + "%";
+        document.getElementById("counter-bar").setAttribute("aria-label", pctLoc + "% de las personas reportadas ya fueron localizadas");
+        document.getElementById("counter-bar").hidden = false;
+        document.getElementById("leg-loc").textContent = pctLoc + "% localizadas";
+        document.getElementById("leg-pend").textContent = pctPend + "% por localizar";
+        document.getElementById("counter-bar-legend").hidden = false;
         var nombres = { desaparecidos: "Desaparecidos Terremoto Venezuela", venezuelatebusca: "Venezuela Te Busca" };
         var ok = Object.keys(d.fuentes).filter(function (k) { return d.fuentes[k] && d.fuentes[k].ok; }).map(function (k) { return nombres[k] || k; });
         var note;
