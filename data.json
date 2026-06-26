@@ -19,7 +19,28 @@
       "heridos": 4300,
       "desaparecidos_oficiales": 157,
       "nota": "Cifras oficiales en aumento. La Guaira es la zona más afectada (declarada zona de desastre, +100 edificios colapsados)."
-    }
+    },
+    "danos_estructurales": [
+      "~250 edificios colapsados o dañados; más de 200 personas bajo escombros",
+      "La Guaira (zona de desastre): más de 100 edificios caídos; Hotel Eduard's destruido",
+      "Caracas: decenas de edificios afectados; lo peor en Altamira y Los Palos Grandes",
+      "Aeropuerto de Maiquetía dañado; vuelos suspendidos"
+    ]
+  },
+  "seguridad": {
+    "replicas": [
+      "Agáchate, cúbrete bajo una mesa firme y agárrate hasta que pare",
+      "Aléjate de ventanas, fachadas, balcones y postes eléctricos",
+      "No vuelvas a un edificio agrietado o dañado hasta que lo revisen",
+      "No uses ascensores",
+      "Si hueles gas, no enciendas luces ni fuego: sal y avisa"
+    ],
+    "si_atrapado": [
+      "Cúbrete boca y nariz con tela para no respirar polvo",
+      "Golpea 3 veces seguidas una tubería o pared; usa un silbato si puedes",
+      "Manda un mensaje de texto con tu ubicación: gasta menos batería que llamar",
+      "No grites salvo como último recurso: gastas aire e inhalas polvo"
+    ]
   },
   "buscar_familia": [
     {
