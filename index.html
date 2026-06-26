@@ -456,7 +456,7 @@
     </div>
     <h1 class="reveal" data-i18n="h1">Cómo encontrar a tu familia y ayudar, desde donde estés</h1>
     <p class="lede reveal" data-i18n="lede">Dos terremotos (7,2 y 7,5) golpearon el norte de Venezuela el 24 de junio de 2026, con epicentro en Yaracuy. La Guaira y el Gran Caracas son las zonas más afectadas. Aquí están los canales verificados para buscar a un familiar y para ayudar sin caer en estafas.</p>
-    <span class="updated"><span class="dot" aria-hidden="true"></span>Información verificada el 25 de junio de 2026</span>
+    <span class="updated"><span class="dot" aria-hidden="true"></span>Información verificada el 26 de junio de 2026</span>
     <div><a class="hero-cta" href="#buscar">Buscar o reportar a un familiar →</a></div>
   </header>
 
@@ -467,16 +467,16 @@
         <span class="section-num">01</span>
         <h2 data-i18n="s1-title">Buscar a un familiar</h2>
       </div>
-      <div class="counter" id="counter" hidden>
-        <div class="counter-head">Personas en ambas plataformas de búsqueda</div>
+      <div class="counter" id="counter">
+        <div class="counter-head">Personas en las plataformas de búsqueda · al 26 jun</div>
         <div class="counter-grid">
-          <div class="stat"><div class="stat-num" id="c-reportadas">—</div><div class="stat-label">Reportadas</div></div>
-          <div class="stat"><div class="stat-num red" id="c-porlocalizar">—</div><div class="stat-label">Por localizar</div><div class="stat-pct red" id="c-pct-pend"></div></div>
-          <div class="stat"><div class="stat-num green" id="c-localizadas">—</div><div class="stat-label">Localizadas</div><div class="stat-pct green" id="c-pct-loc"></div></div>
+          <div class="stat"><div class="stat-num">56.949</div><div class="stat-label">Reportadas</div></div>
+          <div class="stat"><div class="stat-num red">37.685</div><div class="stat-label">Por localizar</div><div class="stat-pct red">66% del total</div></div>
+          <div class="stat"><div class="stat-num green">19.264</div><div class="stat-label">Localizadas</div><div class="stat-pct green">34% del total</div></div>
         </div>
-        <div class="counter-bar" id="counter-bar" hidden><span class="counter-bar-fill" id="counter-bar-fill"></span></div>
-        <div class="counter-bar-legend" id="counter-bar-legend" hidden><span class="loc" id="leg-loc"></span><span class="pend" id="leg-pend"></span></div>
-        <div class="counter-note" id="counter-note"></div>
+        <div class="counter-bar"><span class="counter-bar-fill" style="width:34%"></span></div>
+        <div class="counter-bar-legend"><span class="loc">34% localizadas</span><span class="pend">66% por localizar</span></div>
+        <div class="counter-note">Cifras de Desaparecidos Terremoto Venezuela (la plataforma mayor); Venezuela Te Busca suma ~26.000 más (combinado ~83.000). Las plataformas bloquean la lectura automática, así que esta es una foto al 26 jun — entra a una plataforma abajo para el número en vivo.</div>
       </div>
       <div class="urgent"><strong>Toca una plataforma para buscar o reportar a una persona.</strong> Usa las que ya existen: centralizar todo en el mismo lugar es lo que permite cruzar "lo busco" con "está a salvo". Crear listas nuevas y dispersas dificulta el reencuentro.</div>
       <div class="cards">
@@ -891,42 +891,8 @@
     dlg.addEventListener("close", reset);
   })();
 
-  // Contador combinado en vivo. Si falla, queda oculto (nunca muestra 0).
-  (function loadCounter() {
-    fetch("/api/contador")
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-      .then(function (d) {
-        if (!d || !d.combinado) return;
-        var c = d.combinado;
-        var fmt = function (n) { return Number(n).toLocaleString("es-ES"); };
-        document.getElementById("c-reportadas").textContent = fmt(c.reportadas);
-        document.getElementById("c-porlocalizar").textContent = fmt(c.porLocalizar);
-        document.getElementById("c-localizadas").textContent = fmt(c.localizadas);
-        var pctLoc = c.reportadas ? Math.round((c.localizadas / c.reportadas) * 100) : 0;
-        var pctPend = c.reportadas ? Math.round((c.porLocalizar / c.reportadas) * 100) : 0;
-        document.getElementById("c-pct-pend").textContent = pctPend + "% del total";
-        document.getElementById("c-pct-loc").textContent = pctLoc + "% del total";
-        document.getElementById("counter-bar-fill").style.width = pctLoc + "%";
-        document.getElementById("counter-bar").setAttribute("aria-label", pctLoc + "% de las personas reportadas ya fueron localizadas");
-        document.getElementById("counter-bar").hidden = false;
-        document.getElementById("leg-loc").textContent = pctLoc + "% localizadas";
-        document.getElementById("leg-pend").textContent = pctPend + "% por localizar";
-        document.getElementById("counter-bar-legend").hidden = false;
-        var nombres = { desaparecidos: "Desaparecidos Terremoto Venezuela", venezuelatebusca: "Venezuela Te Busca" };
-        var ok = Object.keys(d.fuentes).filter(function (k) { return d.fuentes[k] && d.fuentes[k].ok; }).map(function (k) { return nombres[k] || k; });
-        var note;
-        if (ok.length >= 2) {
-          note = "Total combinado de " + ok.join(" + ") + ", actualizado en vivo. Puede incluir a una misma persona en ambas; no es cifra oficial.";
-        } else if (ok.length === 1) {
-          note = "Conteo de " + ok[0] + ", actualizado en vivo. (La otra plataforma sigue activa para buscar; solo no pudimos leer su número automáticamente.) No es cifra oficial.";
-        } else {
-          note = "Conteo en vivo de las plataformas de búsqueda. No es cifra oficial.";
-        }
-        document.getElementById("counter-note").textContent = note;
-        document.getElementById("counter").hidden = false;
-      })
-      .catch(function () { /* silencioso: el contador permanece oculto */ });
-  })();
+  // El contador es ahora una foto estática (las plataformas bloquean la
+  // lectura automática: reCAPTCHA y bloqueo de IP). Los números están en el HTML.
 </script>
 <!-- Vercel Web Analytics (sitio estático) -->
 <script defer src="/_vercel/insights/script.js"></script>
