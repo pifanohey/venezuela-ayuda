@@ -156,7 +156,7 @@
   /* link cards */
   .cards { display: grid; gap: 12px; }
 
-  a.card {
+  .card {
     display: block;
     text-decoration: none;
     color: inherit;
@@ -189,6 +189,7 @@
     padding: 3px 8px;
   }
   .card-tag.blue { color: var(--blue-ink); background: var(--blue-soft); }
+  .card-tag.gray { color: var(--muted); background: #eceef1; }
 
   .card-cta {
     display: inline-flex;
@@ -496,6 +497,10 @@
           <span><a href="tel:911">911</a> · <a href="tel:171">171</a></span>
         </div>
         <div class="phone">
+          <span class="label">Protección Civil Nacional</span>
+          <a href="tel:+582126052222">(0212) 605.22.22</a>
+        </div>
+        <div class="phone">
           <span class="label">Si no conecta, según tu operadora</span>
           <span>*1 (Movilnet) · <a href="tel:112">112</a> (Digitel)</span>
         </div>
@@ -514,10 +519,41 @@
       </details>
     </section>
 
-    <!-- 2. DONATE -->
-    <section id="donar">
+    <!-- 2. SHELTERS -->
+    <section id="refugios">
       <div class="section-head">
         <span class="section-num">02</span>
+        <h2>Refugios y zonas afectadas</h2>
+      </div>
+      <p class="section-sub">Si tu vivienda quedó afectada o buscas dónde alojarte, estos son refugios oficiales habilitados en Caracas.</p>
+      <div class="cards">
+        <div class="card" style="cursor:default">
+          <div class="card-top">
+            <span class="card-title">Refugios de la Alcaldía de Caracas</span>
+            <span class="card-tag blue">Oficial</span>
+          </div>
+          <div class="card-desc">
+            • San Bernardino — Complejo Cultural y Deportivo Guayana Esequiba<br>
+            • 23 de Enero — Estadio Chato Candela<br>
+            • El Paraíso — Sede del Instituto Nacional de Deportes (IND)<br>
+            • San Juan — Sede de Ipostel
+          </div>
+        </div>
+        <a class="card" href="https://sosvenezuela2026.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Mapa en vivo: refugios, SOS y atrapados</span>
+            <span class="card-host">sosvenezuela2026.com</span>
+          </div>
+          <div class="card-desc">Mapa colaborativo con refugios, pedidos de auxilio y personas atrapadas, con ubicación.</div>
+          <span class="card-tag gray">Ciudadano · no oficial — verifica antes de actuar</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. DONATE -->
+    <section id="donar">
+      <div class="section-head">
+        <span class="section-num">03</span>
         <h2 data-i18n="s2-title">Cómo donar desde EE.UU.</h2>
       </div>
       <p class="section-sub" data-i18n="s2-sub">El dinero ayuda más que los bienes físicos: estas organizaciones compran lo necesario en la zona, sin retrasos de aduana. Todas tienen operación real sobre el terreno.</p>
@@ -550,13 +586,21 @@
           </div>
           <div class="card-desc" data-i18n="s2-c4-desc">Equipos de rescate y evaluación con suministros preposicionados a través de su fondo de emergencia.</div>
         </a>
+        <a class="card" href="https://www.unocha.org/venezuela" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Fondo Humanitario de la ONU (OCHA)</span>
+            <span class="card-host">unocha.org/venezuela</span>
+          </div>
+          <div class="card-desc">Canal oficial de la ONU que canaliza donaciones a organizaciones que trabajan dentro de Venezuela.</div>
+          <span class="card-tag blue">Canal oficial · ONU</span>
+        </a>
       </div>
     </section>
 
-    <!-- 3. DONATE INSIDE VENEZUELA -->
+    <!-- 4. DONATE INSIDE VENEZUELA -->
     <section id="donar-vzla">
       <div class="section-head">
-        <span class="section-num">03</span>
+        <span class="section-num">04</span>
         <h2>Donar dentro de Venezuela</h2>
       </div>
       <p class="section-sub">Si estás en Venezuela y quieres ayudar localmente, usa organizaciones certificadas y no partidistas. Reciben dinero y también agua, alimentos no perecederos y medicinas.</p>
@@ -581,10 +625,10 @@
       <p class="section-sub" style="margin-top:16px; margin-bottom:0">Hay muchos otros centros de acopio (universidades, partidos, voluntariado). Antes de entregar donaciones, confirma que sea una organización reconocida y evita puntos de recolección sin identificar.</p>
     </section>
 
-    <!-- 4. AVOID SCAMS -->
+    <!-- 5. AVOID SCAMS -->
     <section id="estafas">
       <div class="section-head">
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <h2 data-i18n="s3-title">Donar sin caer en estafas</h2>
       </div>
       <p class="section-sub" data-i18n="s3-sub">Tras cada desastre aparecen recaudaciones falsas. Antes de dar tu dinero:</p>
@@ -597,10 +641,10 @@
       </ul>
     </section>
 
-    <!-- 5. SHARE -->
+    <!-- 6. SHARE -->
     <section id="compartir">
       <div class="section-head">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <h2 data-i18n="s4-title">Comparte esta página</h2>
       </div>
       <p class="section-sub" data-i18n="s4-sub">Lo más útil que puedes hacer es enviar a la gente a los canales correctos. Compártelo en tus grupos.</p>

@@ -50,7 +50,8 @@
   "telefonos": {
     "emergencia_nacional_oficial": [
       { "linea": "VEN 9-1-1 (línea única nacional)", "numero": "911" },
-      { "linea": "Emergencias / Protección Civil / Bomberos", "numero": "171" }
+      { "linea": "Emergencias / Bomberos", "numero": "171" },
+      { "linea": "Protección Civil Nacional", "numero": "(0212) 605.22.22" }
     ],
     "por_operadora_venezuela": [
       { "operadora": "Movilnet", "numero": "*1" },
@@ -89,8 +90,27 @@
       "nombre": "Cruz Roja / IFRC",
       "url": "https://www.ifrc.org/",
       "enfoque": "Equipos de rescate y evaluación con suministros preposicionados vía su fondo de emergencia."
+    },
+    {
+      "nombre": "Fondo Humanitario de la ONU (OCHA)",
+      "url": "https://www.unocha.org/venezuela",
+      "enfoque": "Canal oficial de la ONU que canaliza donaciones a organizaciones que trabajan dentro de Venezuela."
     }
   ],
+  "refugios": {
+    "caracas_alcaldia_oficial": [
+      { "parroquia": "San Bernardino", "sede": "Complejo Cultural y Deportivo Guayana Esequiba" },
+      { "parroquia": "23 de Enero", "sede": "Estadio Chato Candela" },
+      { "parroquia": "El Paraíso", "sede": "Instituto Nacional de Deportes (IND)" },
+      { "parroquia": "San Juan", "sede": "Ipostel" }
+    ],
+    "mapa_en_vivo": {
+      "nombre": "SOS Venezuela 2026",
+      "url": "https://sosvenezuela2026.com/",
+      "tipo": "plataforma ciudadana (no oficial)",
+      "nota": "Mapa colaborativo de refugios, SOS y personas atrapadas. Verifica antes de actuar."
+    }
+  },
   "donar_en_venezuela": {
     "nota": "Solo organizaciones certificadas y no partidistas. Antes de entregar donaciones en cualquier centro de acopio, confirma que sea una organización reconocida.",
     "organizaciones": [
