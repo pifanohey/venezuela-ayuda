@@ -15,10 +15,11 @@
     "zonas_mas_afectadas": ["La Guaira", "Gran Caracas", "Yaracuy"],
     "balance_oficial": {
       "al_dia": "2026-06-26",
-      "fallecidos": 235,
-      "heridos": 4300,
+      "fallecidos": 589,
+      "heridos": 2980,
       "desaparecidos_oficiales": 157,
-      "nota": "Cifras oficiales en aumento. La Guaira es la zona más afectada (declarada zona de desastre, +100 edificios colapsados)."
+      "fuente": "Presidencia (Delcy Rodríguez)",
+      "nota": "Cifras de la presidencia; el Ministro de Salud reportó 235 fallecidos / 4.300 heridos. Varían según la fuente oficial y siguen en aumento. La Guaira es la zona más afectada (zona de desastre, +100 edificios colapsados)."
     },
     "danos_estructurales": [
       "~250 edificios colapsados o dañados; más de 200 personas bajo escombros",
