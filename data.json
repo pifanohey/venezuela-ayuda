@@ -56,6 +56,12 @@
       "nota": "Registro centralizado de personas desaparecidas tras el terremoto."
     },
     {
+      "nombre": "Encuéntralos",
+      "url": "https://encuentralos.tecnosoft.dev/",
+      "tipo": "plataforma ciudadana (no partidista)",
+      "nota": "Busca o reporta personas; coordina centros de acopio para no duplicar esfuerzos."
+    },
+    {
       "nombre": "Restoring Family Links (Cruz Roja / CICR)",
       "url": "https://familylinks.icrc.org/",
       "tipo": "canal oficial",
