@@ -140,6 +140,23 @@
     letter-spacing: -.01em;
   }
   .section-sub { color: var(--muted); font-size: 15.5px; margin: -6px 0 18px 0; }
+  .subhead {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -.01em;
+    margin: 30px 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .subhead::before {
+    content: "";
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, var(--yellow) 0 33%, var(--blue) 33% 66%, var(--red) 66% 100%);
+  }
 
   /* urgent banner for find-family */
   .urgent {
@@ -548,6 +565,36 @@
           <span class="card-tag gray">Ciudadano · no oficial — verifica antes de actuar</span>
         </a>
       </div>
+
+      <h3 class="subhead">Mapas de daños por satélite</h3>
+      <p class="section-sub">Imágenes y evaluaciones oficiales de las zonas afectadas (La Guaira, Caracas). Sirven para ver la magnitud real, priorizar la ayuda e impulsar donaciones.</p>
+      <div class="cards">
+        <a class="card" href="https://mapping.emergency.copernicus.eu/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Copernicus EMS — Cartografía de emergencia</span>
+            <span class="card-host">emergency.copernicus.eu</span>
+          </div>
+          <div class="card-desc">Mapas rápidos de daños del servicio de emergencias de la Unión Europea. Acceso libre.</div>
+          <span class="card-tag blue">Oficial · UE</span>
+        </a>
+        <a class="card" href="https://www.maxar.com/open-data" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">Maxar Open Data — Imágenes antes/después</span>
+            <span class="card-host">maxar.com/open-data</span>
+          </div>
+          <div class="card-desc">Imágenes satelitales de alta resolución de antes y después del sismo, de uso libre (licencia abierta).</div>
+          <span class="card-tag blue">Alta resolución</span>
+        </a>
+        <a class="card" href="https://unosat.org/products/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-title">UNOSAT — Evaluación de daños (ONU)</span>
+            <span class="card-host">unosat.org</span>
+          </div>
+          <div class="card-desc">Análisis de daños por satélite del Centro Satelital de Naciones Unidas.</div>
+          <span class="card-tag blue">Oficial · ONU</span>
+        </a>
+      </div>
+      <p class="section-sub" style="margin-top:14px; margin-bottom:0">Los mapas específicos de este terremoto pueden tardar 1–3 días en publicarse; estos son los portales oficiales donde aparecen.</p>
     </section>
 
     <!-- 3. DONATE -->

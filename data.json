@@ -109,7 +109,13 @@
       "url": "https://sosvenezuela2026.com/",
       "tipo": "plataforma ciudadana (no oficial)",
       "nota": "Mapa colaborativo de refugios, SOS y personas atrapadas. Verifica antes de actuar."
-    }
+    },
+    "mapas_danos_satelite": [
+      { "nombre": "Copernicus EMS", "url": "https://mapping.emergency.copernicus.eu/", "tipo": "oficial (UE)", "nota": "Cartografía rápida de daños, acceso libre." },
+      { "nombre": "Maxar Open Data", "url": "https://www.maxar.com/open-data", "tipo": "imágenes alta resolución antes/después, licencia abierta" },
+      { "nombre": "UNOSAT", "url": "https://unosat.org/products/", "tipo": "oficial (ONU)", "nota": "Evaluación de daños por satélite." }
+    ],
+    "nota_satelite": "Los mapas específicos de este terremoto pueden tardar 1-3 días en publicarse; estos son los portales oficiales donde aparecen."
   },
   "donar_en_venezuela": {
     "nota": "Solo organizaciones certificadas y no partidistas. Antes de entregar donaciones en cualquier centro de acopio, confirma que sea una organización reconocida.",
