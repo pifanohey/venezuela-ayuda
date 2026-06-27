@@ -140,7 +140,7 @@
       "nota": "Mapa colaborativo de refugios, SOS y personas atrapadas. Verifica antes de actuar."
     },
     "mapas_danos_satelite": [
-      { "nombre": "Copernicus EMSR884 (mapa oficial de este sismo)", "url": "https://mapping.emergency.copernicus.eu/activations/EMSR884/", "tipo": "oficial (UE)", "nota": "Mapa interactivo de daños y movimiento de suelo (Sentinel-1) de La Guaira y Caracas, imágenes 24-26 jun. Datos/productos también en el bucket público rapidmapping-viewer.s3.amazonaws.com." },
+      { "nombre": "Copernicus EMSR884 (mapa oficial de este sismo)", "url": "https://mapping.emergency.copernicus.eu/activations/EMSR884/", "tipo": "oficial (UE)", "informe": "https://storymaps.arcgis.com/stories/717d0c07ec434b54ab6b2e0bbd7bc9f6", "api": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884", "zonas_evaluadas": ["Central Coastal", "Caraballeda/La Guaira", "Caracas", "Petare", "Antímano", "Maracay", "Santa Cruz", "Morón", "Puerto Cabello", "San Felipe", "Valencia", "Guacara", "Villa de Cura"], "stats_nota": "La API expone stats oficiales (área construida ha, edificios identificados) pero al 27 jun son parciales (grading inicial) y NO representan el total de daños. No publicar como total.", "nota": "Mapa de daños y movimiento de suelo (Sentinel-1) de La Guaira y Caracas, imágenes 24-26 jun." },
       { "nombre": "Maxar Open Data", "url": "https://www.maxar.com/open-data", "tipo": "imágenes alta resolución antes/después, licencia abierta" },
       { "nombre": "UNOSAT", "url": "https://unosat.org/products/", "tipo": "oficial (ONU)", "nota": "Evaluación de daños por satélite." }
     ],
