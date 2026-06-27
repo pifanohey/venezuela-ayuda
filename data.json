@@ -146,6 +146,12 @@
     ],
     "nota_satelite": "EMSR884 es la activación oficial de Copernicus para este terremoto, ya publicada."
   },
+  "hospitales": {
+    "nota": "El Ministerio de Salud habilitó 8 hospitales públicos y 12 clínicas en la Gran Caracas. Emergencia médica: 911 o 171.",
+    "publicos": ["Vargas", "El Algodonal (Antímano)", "Lídice", "Periférico de Catia", "Los Magallanes", "Militar Carlos Arvelo", "Domingo Luciani"],
+    "clinicas": ["Santa Sofía", "Centro Médico Docente La Trinidad", "Hospital de Clínicas Caracas", "Fénix Salud", "Clínica Ávila", "La Floresta", "Sanatrix", "Urológico San Román", "Policlínica Metropolitana", "Clínica Loira", "Venemergencia"],
+    "fuente": "Ministerio de Salud"
+  },
   "cobertura_prensa": [
     { "nombre": "CNN en Español — en vivo", "url": "https://cnnespanol.cnn.com/2026/06/24/venezuela/live-news/terremoto-sismo-en-vivo-noticias-caracas-orix", "tipo": "fotos y video" },
     { "nombre": "Al Jazeera — video colapso de edificios", "url": "https://www.aljazeera.com/video/newsfeed/2026/6/25/buildings-collapse-in-venezuelan-capital-after-powerful-earthquakes-hit", "tipo": "video" },
