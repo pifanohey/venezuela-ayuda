@@ -3,7 +3,7 @@
     "titulo": "Terremoto Venezuela 2026 — Hub de recursos verificados",
     "descripcion": "Datos estructurados para localizar familiares y ayudar de forma segura tras los terremotos del 24 de junio de 2026 en Venezuela. Pensado para consumo por agentes y aplicaciones: dirige a las fuentes oficiales, no replica sus datos.",
     "idioma": "es",
-    "verificado_el": "2026-06-25",
+    "verificado_el": "2026-06-29",
     "aviso": "Este recurso reúne enlaces y números de terceros; no recauda dinero ni gestiona datos personales. Verifica siempre en la fuente oficial antes de donar o difundir información. Las cifras cambian con frecuencia.",
     "version": 1
   },
@@ -14,18 +14,24 @@
     "epicentro": "Estado Yaracuy (cerca de San Felipe y Yumare), ~160 km al oeste de Caracas",
     "zonas_mas_afectadas": ["La Guaira", "Gran Caracas", "Yaracuy"],
     "balance_oficial": {
-      "al_dia": "2026-06-28",
-      "fallecidos": 1450,
-      "heridos": 3360,
+      "al_dia": "2026-06-29",
+      "fallecidos": 1719,
+      "heridos": 5034,
+      "atendidos_hospitales": 22619,
+      "damnificados": 15866,
       "sin_contacto_estimado_onu": 50000,
-      "replicas": 430,
-      "fuente": "Asamblea Nacional (Jorge Rodríguez); estimación de sin contacto: ONU",
-      "nota": "Cifras en aumento. La ONU estima más de 50.000 personas sin contacto (otros conteos hasta 68.000). +430 réplicas. La Guaira es la zona más afectada (zona de desastre)."
+      "replicas": 609,
+      "edificios_afectados": 855,
+      "edificios_colapso_total": 189,
+      "edificios_colapso_parcial_o_severo": 666,
+      "fuente": "Asamblea Nacional (Jorge Rodríguez), parte del 29 jun; estimación de sin contacto: ONU",
+      "nota": "Cifras en aumento. La ONU estima más de 50.000 personas sin contacto (otros conteos hasta 68.000). Más de 600 réplicas registradas. La Guaira es la zona más afectada (zona de desastre)."
     },
     "danos_estructurales": [
-      "~250 edificios colapsados o dañados; más de 200 personas bajo escombros",
-      "La Guaira (zona de desastre): más de 100 edificios caídos; Hotel Eduard's destruido",
-      "Caracas: decenas de edificios afectados; lo peor en Altamira y Los Palos Grandes",
+      "855 edificios afectados: 189 con colapso total y 666 con colapso parcial o daños severos",
+      "15.866 damnificados; 22.619 personas atendidas en hospitales y centros de campaña",
+      "La Guaira (zona de desastre): de las más golpeadas; Hotel Eduard's destruido",
+      "Caracas: lo peor en Altamira y Los Palos Grandes",
       "Aeropuerto de Maiquetía dañado; vuelos suspendidos"
     ]
   },
